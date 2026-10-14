@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10172a">
+  <title>SurfSync AI Business Chatbot</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="SurfSync chatbot home">
+      <span class="brand-mark">S</span>
+      <span><strong>SurfSync</strong><small>AI Business Assistant</small></span>
+    </a>
+    <a class="site-link" href="https://surfsyncinfotech.in/" target="_blank" rel="noopener noreferrer">Official website ↗</a>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow"><span class="pulse"></span> VIRTUAL BUSINESS ASSISTANT</div>
+      <h1>Let's turn your<br><span>next idea into a plan.</span></h1>
+      <p>Explore service categories, ask a question, or tell us about your project.</p>
+      <div class="service-pills">
+        <span>Web Development</span><span>Mobile Apps</span><span>AI & Automation</span><span>Ecommerce</span><span>Digital Marketing</span>
+      </div>
+    </section>
+
+    <section class="chat-card" aria-label="Chat with SurfSync">
+      <div class="chat-head">
+        <div class="avatar">S</div>
+        <div><strong>SurfSync Assistant</strong><small><span class="online-dot"></span> Ready to help</small></div>
+        <button id="restartBtn" class="icon-btn" title="Restart conversation" aria-label="Restart conversation">↻</button>
+      </div>
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message assistant"><div class="bubble">Hi! 👋 I'm the SurfSync virtual assistant. I can explain the service categories in my current knowledge base or help collect your project enquiry. What would you like to know?</div><time>Just now</time></div>
+      </div>
+      <div class="suggestions" id="suggestions">
+        <button data-question="What services do you offer?">Explore services</button>
+        <button data-question="I need a website for my business.">I need a website</button>
+        <button data-question="How does pricing work?">Pricing information</button>
+      </div>
+      <form id="chatForm" class="composer">
+        <label class="sr-only" for="messageInput">Your message</label>
+        <input id="messageInput" autocomplete="off" maxlength="2000" placeholder="Ask about a service…" required>
+        <button id="sendBtn" type="submit" aria-label="Send message">➤</button>
+      </form>
+      <div class="chat-foot">Please don't share sensitive personal or payment information in chat.</div>
+    </section>
+
+    <section class="lead-card">
+      <div class="lead-heading"><div><span class="eyebrow">PROJECT CONSULATION</span><h2>Tell us what you're building</h2></div><span class="lead-icon">↗</span></div>
+      <p class="lead-subtitle">Share the basics so your requirements can be recorded for follow-up.</p>
+      <form id="leadForm">
+        <div class="form-grid">
+          <div class="field"><label for="name">Name *</label><input id="name" name="name" required minlength="2" maxlength="100" placeholder="Your name"></div>
+          <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div>
+          <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" maxlength="30" placeholder="+91 …"></div>
+          <div class="field"><label for="service">Required service *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Website Development</option><option>Mobile App Development</option><option>AI and Automation</option><option>Digital Marketing</option><option>Ecommerce Solutions</option><option>Enterprise Software</option><option>UI/UX or Design</option><option>Website Maintenance</option><option>Other / Not sure</option></select></div>
+          <div class="field full"><label for="description">Project description *</label><textarea id="description" name="description" rows="3" minlength="10" maxlength="3000" required placeholder="What do you want to build, and what should it do?"></textarea></div>
+          <div class="field"><label for="budget">Estimated budget</label><select id="budget" name="budget"><option value="">Not decided</option><option>Under ₹25,000</option><option>₹25,000–₹75,000</option><option>₹75,000–₹2,00,000</option><option>Above ₹2,00,000</option><option>Prefer to discuss</option></select></div>
+          <div class="field"><label for="timeline">Expected timeline</label><select id="timeline" name="timeline"><option value="">Not decided</option><option>As soon as possible</option><option>Within 1 month</option><option>1–3 months</option><option>3+ months</option><option>Prefer to discuss</option></select></div>
+        </div>
+        <label class="consent"><input id="consent" type="checkbox" required><span>I agree to the storage of my information so the team can review and respond to my enquiry.</span></label>
+        <button class="submit-btn" type="submit">Save project enquiry <span>→</span></button>
+        <p id="leadStatus" class="status" role="status"></p>
+      </form>
+    </section>
+  </main>
+  <footer>SurfSync AI Business Chatbot <a href="https://surfsyncinfotech.in/" target="_blank" rel="noopener noreferrer">surfsyncinfotech.in</a></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
